@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/home/appuser/app
+      - ./uploads:/home/appuser/app/uploads
+    environment:
+      - ENV=production
+      - SERPER_API_KEY
+      - IMGUR_CLIENT_ID
+    networks:
+      - fastapi-network
+    depends_on:
+      - db
+    env_file:
+      - .env
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mydb
+    networks:
+      - fastapi-network
+
+networks:
+  fastapi-network:
+    driver: bridge
