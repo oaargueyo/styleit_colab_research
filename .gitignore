@@ -1,0 +1,38 @@
+# Python specific ignores
+*.py[cod]       # Compiled Python files
+__pycache__/    # Python cache directory
+*.egg-info/     # Package metadata directory
+*.egg           # Package files
+*.pyo           # Optimized Python files
+
+# FastAPI/Docker project specific
+.env            # Environment variables file
+
+# Logs
+*.log           # Log files
+logs/           # Logs directory
+
+# Virtual environment
+venv/           # Virtual environment folder
+.env/           # Virtual environment folder (alternative naming)
+
+# Docker specific
+*.env           # Additional environment variable files
+docker-compose.override.yml  # Docker Compose overrides
+*.bak           # Backup files
+.dockerignore   # Docker ignore file
+.DS_Store       # macOS metadata files
+
+# Editor/IDE specific
+.idea/          # PyCharm project files
+.vscode/        # VSCode settings
+*.swp           # Swap files for vi and vim editors
+
+# Build artifacts
+build/          # Build directory
+dist/           # Distribution directory
+*.spec          # PyInstaller spec file
+node_modules/   # Node.js dependencies (if applicable)
+
+# Pytest cache
+.cache/         # Pytest cache directory
